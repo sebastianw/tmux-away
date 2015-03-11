@@ -93,7 +93,7 @@ sub tmux_away {
     }
 
     # get actual tmux session status
-    @res = `tmux -S '$tmux_socket' lsc 2>&1`;
+    @res = `tmux -S '$tmux_socket' lsc -F '#{client_tty} #{session_id} #{session_name}' 2>&1`;
     if (@res[0] =~ /^server not found/) {
       Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'tmux_away_crap',
         "error getting tmux session status.");
@@ -102,7 +102,7 @@ sub tmux_away {
     $status = 1; # away, assumes the session is detached
     foreach (@res) {
       my @args_st = split(' ');
-      if (@args_st[1] == $tmux_session) {
+      if (@args_st[1] == "\$$tmux_session") {
         $status = 2; # unaway
       }
     }
