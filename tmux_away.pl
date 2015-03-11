@@ -19,6 +19,8 @@ $VERSION = "1.1";
 # screen_away irssi module version 0.9.7.1 written by Andreas 'ads' Scherbaum
 # <ads@ufp.de>.
 #
+# Modified by Sebastian 'GPF' Wiesinger <sebastian@karotte.org>.
+#
 # usage:
 #
 # put this script into your autorun directory and/or load it with
