@@ -4,7 +4,7 @@ use FileHandle;
 
 use vars qw($VERSION %IRSSI);
 
-$VERSION = "1.1";
+$VERSION = "1.2";
 %IRSSI = (
     authors     => 'cdidier',
     name        => 'tmux_away',
